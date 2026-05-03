@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gemma-talker"
+version = "0.1.0"
+description = "Chat minimalista de terminal con Gemma usando llama.cpp."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "rich>=15.0",
+    "prompt-toolkit>=3.0",
+    "llama-cpp-python",
+    "huggingface-hub",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "responses>=0.25",
+]
+
+[project.scripts]
+gemma-talker = "gemma_talker.cli:main"
+gemma = "gemma_talker.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

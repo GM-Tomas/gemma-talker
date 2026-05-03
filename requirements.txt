@@ -1,6 +1,4 @@
 rich>=15.0
-prompt_toolkit>=3.0
+prompt-toolkit>=3.0
 llama-cpp-python
 huggingface-hub
-pytest>=8.0
-responses>=0.25

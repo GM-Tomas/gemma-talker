@@ -16,8 +16,8 @@ class ChatConfig:
     @classmethod
     def from_env(cls) -> "ChatConfig":
         return cls(
-            repo_id=os.getenv("GEMMA_TALKER_REPO_ID", "bartowski/gemma-2-2b-it-GGUF"),
-            filename=os.getenv("GEMMA_TALKER_MODEL_FILE", "gemma-2-2b-it-Q4_K_M.gguf"),
+            repo_id=os.getenv("GEMMA_TALKER_REPO_ID", "bartowski/google_gemma-4-E2B-it-GGUF"),
+            filename=os.getenv("GEMMA_TALKER_MODEL_FILE", "google_gemma-4-E2B-it-Q4_K_M.gguf"),
             history_file=Path(
                 os.getenv("GEMMA_TALKER_HISTORY", str(Path.home() / ".gemma_chat_history"))
             ),

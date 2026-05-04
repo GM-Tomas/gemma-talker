@@ -1,4 +1,9 @@
 .venv/
+.codex-venv/
+.uv-cache/
+.uv-python/
+.tmp/
+.pytest_cache/
 __pycache__/
 *.pyc
 *.pyo
@@ -13,3 +18,17 @@ build/
 
 .env
 .env.*
+
+# Modelos GGUF (archivos grandes, se descargan de HuggingFace)
+*.gguf
+
+# Conversaciones guardadas con /save
+chat_*.md
+
+# Sistemas operativos
+.DS_Store
+Thumbs.db
+
+# IDEs
+.idea/
+.vscode/

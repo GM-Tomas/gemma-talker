@@ -1,4 +1,0 @@
-rich>=15.0
-prompt-toolkit>=3.0
-llama-cpp-python
-huggingface-hub

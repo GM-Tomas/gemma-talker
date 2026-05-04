@@ -39,11 +39,11 @@ class TerminalUI:
         ):
             yield
 
-    def print_header(self) -> None:
+    def print_header(self, model_name: str = "Gemma") -> None:
         self.console.print()
         self.console.print(
             Panel.fit(
-                "[bold cyan]  Gemma 2 (2B)[/bold cyan]  [dim]via llama.cpp[/dim]",
+                f"[bold cyan]  {model_name}[/bold cyan]  [dim]via llama.cpp[/dim]",
                 border_style="cyan",
                 padding=(0, 6),
             )

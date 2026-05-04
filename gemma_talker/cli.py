@@ -11,11 +11,10 @@ from gemma_talker.infrastructure.terminal_ui import (
 )
 
 
-def main(argv: Sequence[str] | None = None) -> int:
-    _ = argv
+def main(_argv: Sequence[str] | None = None) -> int:
     config = ChatConfig.from_env()
     ui = TerminalUI()
-    ui.print_header()
+    ui.print_header(config.filename)
 
     ui.print_model_check(config.filename)
     try:

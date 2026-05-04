@@ -35,8 +35,10 @@ def test_llama_cpp_chat_model_streams_content_chunks():
     }
 
 
-def test_markdown_transcript_store_saves_conversation(tmp_path: Path):
-    store = MarkdownTranscriptStore("gemma-test.gguf", output_dir=tmp_path)
+def test_markdown_transcript_store_saves_conversation():
+    output_dir = Path(".tmp") / "tests" / "infrastructure"
+    output_dir.mkdir(parents=True, exist_ok=True)
+    store = MarkdownTranscriptStore("gemma-test.gguf", output_dir=output_dir)
 
     saved_path = store.save(
         [
@@ -48,7 +50,7 @@ def test_markdown_transcript_store_saves_conversation(tmp_path: Path):
     )
 
     content = saved_path.read_text(encoding="utf-8")
-    assert saved_path == tmp_path / "chat.md"
+    assert saved_path == output_dir / "chat.md"
     assert "# Chat con gemma-test.gguf" in content
     assert "> **System:** Sos util." in content
     assert "**Vos**\n\nHola Gemma" in content

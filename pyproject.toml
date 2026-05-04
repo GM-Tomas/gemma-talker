@@ -18,12 +18,15 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
     "pytest>=8.0",
-    "responses>=0.25",
+]
+server = [
+    "llama-cpp-python[server]",
 ]
 
 [project.scripts]
 gemma-talker = "gemma_talker.cli:main"
 gemma = "gemma_talker.cli:main"
+gemma-serve = "gemma_talker.serve:serve"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

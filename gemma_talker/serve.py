@@ -72,6 +72,7 @@ def serve() -> int:
             n_gpu_layers=config.n_gpu_layers,
             n_ctx=config.n_ctx,
             model_alias=config.filename,
+            logits_all=False,
         )
     ]
     app = create_app(server_settings=ServerSettings(), model_settings=model_settings)

@@ -22,7 +22,7 @@ class ChatConfig:
                 os.getenv("GEMMA_TALKER_HISTORY", str(Path.home() / ".gemma_chat_history"))
             ),
             n_gpu_layers=int(os.getenv("GEMMA_TALKER_GPU_LAYERS", "-1")),
-            n_ctx=int(os.getenv("GEMMA_TALKER_CTX", "4096")),
+            n_ctx=int(os.getenv("GEMMA_TALKER_CTX", "32768")),
             temperature=float(os.getenv("GEMMA_TALKER_TEMPERATURE", "0.7")),
             max_tokens=int(os.getenv("GEMMA_TALKER_MAX_TOKENS", "2048")),
         )

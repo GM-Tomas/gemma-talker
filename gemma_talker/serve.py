@@ -23,7 +23,7 @@ Pega esto en tu opencode.json (o en ~/.config/opencode/config.json):
         "{filename}": {{
           "name": "Gemma 4 E2B",
           "limit": {{
-            "context": 4096,
+            "context": 32768,
             "output": 2048
           }}
         }}
@@ -45,7 +45,7 @@ def serve() -> int:
 
     try:
         from llama_cpp.server.app import create_app
-        from llama_cpp.server.settings import ModelSettings, Settings
+        from llama_cpp.server.settings import ModelSettings, ServerSettings
     except ImportError:
         print(
             "Error: el servidor requiere dependencias extra.\n"
@@ -74,6 +74,6 @@ def serve() -> int:
             model_alias=config.filename,
         )
     ]
-    app = create_app(settings=Settings(), model_settings=model_settings)
+    app = create_app(server_settings=ServerSettings(), model_settings=model_settings)
     uvicorn.run(app, host=HOST, port=PORT, log_level="info")
     return 0

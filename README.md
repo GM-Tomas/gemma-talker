@@ -148,7 +148,7 @@ Se puede ajustar el modelo y algunos parametros con variables de entorno:
 | `GEMMA_TALKER_MODEL_FILE` | `google_gemma-4-E2B-it-Q4_K_M.gguf` |
 | `GEMMA_TALKER_HISTORY` | `~/.gemma_chat_history` |
 | `GEMMA_TALKER_GPU_LAYERS` | `-1` |
-| `GEMMA_TALKER_CTX` | `4096` |
+| `GEMMA_TALKER_CTX` | `32768` |
 | `GEMMA_TALKER_TEMPERATURE` | `0.7` |
 | `GEMMA_TALKER_MAX_TOKENS` | `2048` |
 
@@ -204,7 +204,7 @@ Pega esto en `opencode.json` en la raiz de tu proyecto (o en
         "google_gemma-4-E2B-it-Q4_K_M.gguf": {
           "name": "Gemma 4 E2B",
           "limit": {
-            "context": 4096,
+            "context": 32768,
             "output": 2048
           }
         }
